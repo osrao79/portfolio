@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family:
+    "Inter", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --bg-primary: #1d2021;
+  --bg-secondary: #282828;
+  --bg-tertiary: #3c3836;
+  --fg-primary: #ebdbb2;
+  --fg-secondary: #fbf1c7;
+  --fg-muted: #a89984;
+  --accent-orange: #fe8019;
+  --accent-yellow: #fabd2f;
+  --accent-green: #b8bb26;
+  --accent-red: #fb4934;
+  --accent-purple: #d3869b;
+  --accent-aqua: #8ec07c;
+}
+::-webkit-scrollbar-thumb {
+  background: #fe8019;
+  border-radius: 5px;
+  height: 1rem;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #282828;
+  background: var(--bg-secondary);
+}
+.decorated-hr {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+  padding: 0 0 2rem 0;
+  margin: 0 5rem;
+  color: white;
+}
+.decorated-hr:after,
+.decorated-hr:before {
+  background: linear-gradient(90deg, #0000, #fe8019, #0000);
+  content: "";
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+  height: 2px;
+}
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 20px 40px;
+}
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
