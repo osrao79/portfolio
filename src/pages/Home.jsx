@@ -1,5 +1,4 @@
 import React from "react";
-import { BsFileRichtext, BsLinkedin } from "react-icons/bs";
 import resumePdf from "../assets/resume.pdf";
 import { FaGithub } from "react-icons/fa";
 import { RxLinkedinLogo } from "react-icons/rx";
