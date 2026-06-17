@@ -1,11 +1,30 @@
 import React, { useState } from "react";
 import Seprator from "../components/Seprator";
 import { ProjectModal } from "../components/ProjectModel";
+import { FaArrowRight } from "react-icons/fa";
 
 export const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 
   const projects = [
+    {
+      title: "Metamesh AI",
+      description:
+        "An AI-powered business data platform that connects to SharePoint, SQL databases, and documents, enabling teams to search and query complex data in plain English. Built React interfaces with secure MSAL authentication and TanStack Query for efficient data fetching.",
+      status: "Ongoing",
+      technologies: ["React", "Tailwind", "MSAL", "TanStack Query"],
+      fullDescription:
+        "Metamesh is a SaaS platform designed to eliminate the time teams waste hunting for information across fragmented data sources. It connects to SharePoint environments, SQL databases, and document libraries — PDFs, Word files, spreadsheets — and lets users ask questions in plain English, returning cited answers that link back to the exact source file, paragraph, or database row.\n\nI developed the React frontend, building user-friendly interfaces that surface complex query results as clear, actionable insights. Authentication and authorisation were handled via MSAL, integrating securely with existing Microsoft 365 tenancies through standard OAuth — no additional licences required.\n\nKey product capabilities include natural-language SQL querying, BIM/IFC model search, cost and document cross-referencing for invoice verification, and support for multiple AI models (GPT, Claude, Llama). The platform is used by project directors and finance teams who need fast, reliable access to years of organisational data.",
+      highlights: [
+        "Natural language search across SharePoint, SQL, and documents",
+        "Secure Microsoft 365 integration via MSAL and OAuth",
+        "Cited answers linking to exact source files and database rows",
+        "Multi-model AI support (GPT, Claude, Llama)",
+        "IFC/BIM model search without specialist software",
+      ],
+      year: "July 2023 - Present",
+      link: "https://www.metamesh.co",
+    },
     {
       title: "The HiVE",
       description:
@@ -27,6 +46,7 @@ export const Projects = () => {
         "Role-based access for supervisors, staff, and clients",
         "Automated alerts and service status tracking",
       ],
+      year: "May 2021 - Jan 2022",
     },
     {
       title: "Isomer AI",
@@ -43,6 +63,7 @@ export const Projects = () => {
         "Pipeline versioning and deployment console",
         "Designed for non-engineer biopharma teams",
       ],
+      year: "Jan 2022 - Aug 2022",
     },
     {
       title: "LeadGen Automation",
@@ -59,7 +80,9 @@ export const Projects = () => {
         "Duplicate detection engine",
         "CSV import/export for external CRMs",
       ],
+      year: "June 2022 - Dec 2022",
     },
+
     {
       title: "Roaming Duck",
       description:
@@ -82,6 +105,7 @@ export const Projects = () => {
         "Group voting and comment threads",
         "Location-based activity recommendations",
       ],
+      year: "Aug 2022 - Sept 2023",
     },
   ];
 
@@ -103,51 +127,25 @@ export const Projects = () => {
               <div
                 key={project.title}
                 onClick={() => setSelectedProject(project)}
-                className="relative bg-[#1d2021] border-2 border-[#3c3836] rounded-xl overflow-hidden hover:border-[#fe8019] transition-all duration-300 flex flex-col space-y-1.5 p-6 pt-10 cursor-pointer group"
+                className="relative bg-[#1d2021] space-y-2 border-2 border-[#3c3836] rounded-xl overflow-hidden hover:border-[#fe8019] transition-all duration-300 flex flex-col p-6 py-4 cursor-pointer group"
               >
-                {/* Status badge */}
-                <div
-                  className={`inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs transition-colors border-transparent shadow absolute top-4 left-6 text-[#1d2021] font-semibold ${
-                    project.status === "Completed"
-                      ? "bg-[#84bd22]"
-                      : "bg-[#fabd2f]"
-                  }`}
-                >
-                  {project.status}
-                </div>
-
-                {/* View details hint */}
-                <span className="absolute top-4 right-6 text-xs text-[#665c54] group-hover:text-[#fe8019] transition-colors duration-200 flex items-center gap-1">
-                  View details
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-3 h-3"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </span>
-
-                {/* Image */}
-                {project.image && (
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-56 object-cover rounded-lg"
-                  />
-                )}
-
                 {/* Content */}
-                <div className="p-2 bg-[#1d2021]">
-                  <h3 className="text-2xl font-bold text-[#fbf1c7] mb-3">
-                    {project.title}
-                  </h3>
-                  <p className="text-[#a89984] text-base leading-relaxed mb-4 line-clamp-3">
+                <div className=" bg-[#1d2021] space-y-4">
+                  <div className="flex w-full justify-between items-center my-3">
+                    <h3 className="text-2xl font-bold text-[#fbf1c7]">
+                      {project.title}
+                    </h3>
+                    <div
+                      className={`flex items-center rounded-md border h-6 px-2.5 py-0.5 text-xs transition-colors border-transparent shadow  text-[#1d2021] font-semibold ${
+                        project.status === "Completed"
+                          ? "bg-[#84bd22]"
+                          : "bg-[#fabd2f]"
+                      }`}
+                    >
+                      {project.status}
+                    </div>
+                  </div>
+                  <p className="text-[#a89984] text-sm leading-relaxed mb-4 line-clamp-3">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -160,9 +158,30 @@ export const Projects = () => {
                       </span>
                     ))}
                   </div>
+                  <div className="flex items-center justify-between flex-wrap gap-2">
+                    <span className="text-xs text-[#a89984]">
+                      {project.year}
+                    </span>
+                    <span className="text-xs text-[#665c54] group-hover:text-[#fe8019] transition-colors duration-200 flex items-center gap-1">
+                      View details
+                      {<FaArrowRight size={10} />}
+                    </span>
+                  </div>
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+        <div className="mt-12 flex justify-center">
+          <div class="bg-gradient-to-r w-fit from-[#fe8019] to-[#fabd2f] p-1 rounded-lg">
+            <div class="bg-[#1d2021] px-12 py-6 rounded-lg">
+              <div class="text-center">
+                <div class="text-2xl font-bold text-[#fe8019] mb-2">
+                  {projects?.length}
+                </div>
+                <div class="text-base text-[#ebdbb2]">Total Projects</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

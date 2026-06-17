@@ -4,14 +4,14 @@ import Seprator from "../components/Seprator";
 
 const education = [
   {
-    degree: "Bachelor of Technology (B.Tech.)",
+    degree: "Bachelor of Technology",
     specialization: "Electrical Engineering",
     institution: "Mewar University",
     location: "Chittorgarh, Rajasthan",
     duration: "2013 - 2017",
   },
   {
-    degree: "Full Stack Development Internship",
+    degree: "Internship",
     specialization: "MERN Stack Development",
     institution: "Newton School",
     location: "Bengaluru, Karnataka",

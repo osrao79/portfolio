@@ -2,11 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
 body {
   margin: 0;
   font-family:
-    "Inter", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
+    "IBM Plex Sans", "Inter", "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -65,4 +67,19 @@ section {
   margin: 0 auto;
   max-width: 1200px;
   padding: 0 20px;
+}
+
+.projectPopup::-webkit-scrollbar {
+  width: 6px;
+}
+
+.projectPopup::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.projectPopup::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  /* This is the key part — min-height shortens the thumb */
+  min-height: 10px;
+  max-height: 20px;
 }

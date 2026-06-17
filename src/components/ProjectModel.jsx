@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { IoClose } from "react-icons/io5";
 
 export const ProjectModal = ({ project, onClose }) => {
   useEffect(() => {
@@ -25,7 +26,7 @@ export const ProjectModal = ({ project, onClose }) => {
 
       {/* Panel */}
       <div
-        className="relative z-10 bg-[#282828] border border-[#504945] rounded-2xl w-full max-w-2xl max-h-[90vh] flex flex-col shadow-2xl px-1 py-2"
+        className=" relative z-10 bg-[#282828] border border-[#504945] rounded-2xl w-full max-w-2xl max-h-[90vh] flex flex-col shadow-2xl px-1 py-2"
         onClick={(e) => e.stopPropagation()}
       >
         {/* ── Fixed header ── */}
@@ -45,26 +46,15 @@ export const ProjectModal = ({ project, onClose }) => {
 
           <button
             onClick={onClose}
-            className="shrink-0 w-9 h-9 rounded-full bg-[#3c3836] hover:bg-[#504945] text-[#a89984] hover:text-[#fbf1c7] transition-colors flex items-center justify-center mt-1"
+            className="shrink-0 w-7 h-7 rounded-full bg-[#3c3836] hover:bg-[#fe8019] text-[#a89984] hover:text-[#fbf1c7] transition-colors flex items-center justify-center mt-1"
             aria-label="Close"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-4 h-4"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
+            <IoClose size={18} />
           </button>
         </div>
 
         {/* ── Scrollable body ── */}
-        <div className="overflow-y-auto px-8 py-6 space-y-6">
+        <div className="projectPopup overflow-y-auto px-8 py-6 space-y-6">
           {/* Overview */}
           <div>
             <h3 className="text-xs font-semibold uppercase tracking-widest text-[#fe8019] mb-3">
